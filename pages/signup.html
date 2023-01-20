@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ثبت نام | کنترل پنل</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../dist/css/bootstrap-theme.css">
+  <!-- Bootstrap rtl -->
+  <link rel="stylesheet" href="../dist/css/rtl.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/AdminLTE.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="../dist/js/persian/persian-datepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../bower_components/select2/dist/css/select2.min.css">
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <style>
+    /* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+  </style>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition register-page">
+  <div class="register-box">
+    <div class="register-logo">
+      <a href="../index.html"><b>ثبت نام در سایت</b></a>
+    </div>
+  
+    <div class="register-box-body">
+      <p class="login-box-msg">ثبت نام کاربر جدید</p>
+  
+      <form id="regForm" action="" method="post">
+
+        <div class="form-group has-feedback tab">نام و نام خانوادگی:
+          <input name="fname" value="" type="text" class="form-control" placeholder="نام">
+          <span class="form-control-feedback"></span>
+          <input name="lname" value="" type="text" class="form-control" placeholder="نام خانوادگی">
+          <span class="form-control-feedback"></span>
+          تاریخ تولد:
+          <input name="bdate" id="bdate" value="" type="datetime" class="form-control date" placeholder="تاریخ تولد">
+          <span class="form-control-feedback"></span>
+          کد ملی:
+          <label class="control-label" for="ncode"><i class="fa fa-times-circle-o"></i> مقدار درست نیست</label>
+          <input name="ncode" value="" id="ncode" type="number" class="form-control" placeholder="کد ملی">
+          <span class="form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback tab">شماره تماس:
+          <input name="callnumber" value="" type="tel" class="form-control" placeholder="شماره تماس">
+          <span class="form-control-feedback"></span>
+          استان محل زندگی:
+          <select name="state" value="" class="form-control" placeholder="استان محل زندگی">
+            <option>orange</option>
+            <option>white</option>
+            <option>purple</option>
+          </select>
+          <span class="form-control-feedback"></span>
+          شهر محل زندگی:
+          <select name="city" value="" class="form-control" placeholder="شهر محل زندگی">
+            <option>orange</option>
+            <option>white</option>
+            <option>purple</option>
+          </select>
+          <span class="form-control-feedback"></span>
+          کد پستی:
+          <input name="pcode" value="" type="number" class="form-control" placeholder="کد پستی">
+          <span class="form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback tab">پایه تحصیلی:
+          <select name="Kgrade" value="" id="Kgrade" class="form-control" placeholder="پایه تحصیلی">
+            <option>orange</option>
+            <option>white</option>
+            <option>purple</option>
+          </select>
+          <span class="form-control-feedback"></span>
+          <br>
+          رشته تحصیلی:
+          <select name="field" value="" id="field" class="form-control" placeholder="رشته تحصیلی">
+            <option>orange</option>
+            <option>white</option>
+            <option>purple</option>
+          </select>
+          <span class="form-control-feedback"></span>
+          <br>
+          نام مدرسه:
+          <input name="bdate" value="" type="text" class="form-control bdate" placeholder="نام مدرسه">
+          <span class="form-control-feedback"></span>
+          <div class="col-xs-12">
+            <div class="checkbox icheck">
+              <label>
+                <input type="checkbox"> من <a href="#">قوانین و شرایط</a> را قبول میکنم.
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-xs-12">
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button type="button" class="btn btn-primary btn-block btn-flat" id="prevBtn" onclick="nextPrev(-1)">قبلی</button>
+                <button type="button" class="btn btn-primary btn-block btn-flat" id="nextBtn" onclick="nextPrev(1)">بعدی</button>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:10px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="signin.html" class="text-center">من قبلا ثبت نام کرده ام</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.form-box -->
+  </div>
+  <!-- /.register-box -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- iCheck -->
+<script src="../plugins/iCheck/icheck.min.js"></script>
+<!-- Select2 -->
+<script src="../bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="../plugins/input-mask/jquery.inputmask.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- babakhani datepicker -->
+<script src="../dist/js/persian/persian-date.min.js"></script>
+<script src="../dist/js/persian/persian-datepicker.min.js"></script>
+
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+    $('#bdate').persianDatepicker({
+      format: 'YYYY/MM/DD'
+    });
+    $("#Kgrade").select2({
+      tags: true
+    });
+    $("#field").select2({
+      tags: true
+    });
+  });
+</script>
+
+<script>
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "ثبت نام";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "بعدی";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+</script>
+</body>
+</html>
